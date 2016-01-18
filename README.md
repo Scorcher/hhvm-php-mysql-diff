@@ -3,6 +3,8 @@
 There is a small dockerized test case return types from mysql result of HHVM, PHP-libmysql, PHP-mysqlnd.
 
 ```bash
+git clone https://github.com/Scorcher/hhvm-php-mysql-diff.git .
+
 docker-compose up -d mariadb
 # wait mariadb until initialized
 
