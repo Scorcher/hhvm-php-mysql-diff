@@ -1,0 +1,7 @@
+FROM php:5.5-cli
+
+RUN    docker-php-ext-configure pdo_mysql --with-libdir=lib/x86_64-linux-gnu/ \
+    && docker-php-ext-install pdo_mysql
+
+CMD ["php", "-a"]
+

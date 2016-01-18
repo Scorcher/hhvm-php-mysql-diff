@@ -1,0 +1,4 @@
+FROM brunoric/hhvm:deb
+
+CMD ["php", "-a"]
+

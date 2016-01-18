@@ -1,0 +1,28 @@
+hhvm:
+  build: .
+  dockerfile: Dockerfile.hhvm
+  volumes:
+   - ./code:/code
+  links:
+   - mariadb
+php_mysql:
+  build: .
+  dockerfile: Dockerfile.mysql
+  volumes:
+   - ./code:/code
+  links:
+   - mariadb
+php_mysqlnd:
+  build: .
+  dockerfile: Dockerfile.mysqlnd
+  volumes:
+   - ./code:/code
+  links:
+   - mariadb
+mariadb:
+  image: "mariadb:10"
+  container_name: mariadb_php_test
+  volumes:
+   - ./mariadb-initdb.d:/docker-entrypoint-initdb.d
+  environment:
+   - MYSQL_ROOT_PASSWORD="111"
